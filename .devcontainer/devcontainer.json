@@ -1,0 +1,27 @@
+{
+  "name": "EIP-6120 Investigation",
+  "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/h4l/devcontainer-features/foundry:1": {}
+  },
+  "postStartCommand": "pipx install ipython && npm install -g solhint",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "nomicfoundation.hardhat-solidity",
+        "tamasfe.even-better-toml"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "prettier.proseWrap": "always",
+        "solidity.formatter": "forge",
+        "solidity.packageDefaultDependenciesContractsDirectory": "src",
+        "solidity.packageDefaultDependenciesDirectory": "lib"
+      }
+    }
+  }
+}
